@@ -1,0 +1,23 @@
+{
+  "name": "app-cert",
+  "version": "1.0.0",
+  "description": "Verifica a data de expiracao do certificado e envia um emai de notificacao",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon -L server.js",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/freitasSantos/app-cert.git"
+  },
+  "author": "freitasSantos",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/freitasSantos/app-cert/issues"
+  },
+  "homepage": "https://github.com/freitasSantos/app-cert#readme",
+  "devDependencies": {
+    "nodemon": "^2.0.19"
+  }
+}
