@@ -1,9 +1,11 @@
 'use strict';
 
+const UUID = require('uuid')
+
 module.exports = {
   async up (queryInterface, Sequelize) {
      await queryInterface.bulkInsert('Certificates', [{
-      
+    id: UUID.v4(),
     ambiente:"HML",
     origem:"Interno",
     proprietario:"Rodrigo S.A.",

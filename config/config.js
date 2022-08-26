@@ -13,6 +13,9 @@ module.exports = {
         require: true,
         rejectUnauthorized: false
       }
+    },
+    define: {
+      timestamps: true
     }
   },
   test: {
