@@ -1,17 +1,15 @@
-const {controller} = require('../../services/util/controller')
-const {status} = require('../../services/util/http')
 const UUID = require('uuid')
-
-const {Certificate} = require('../../DAL/models')
+const { saveCertificate } = require('../../services/middlewares/validateValues')
 
 exports.middleware = []
 
-exports.handdler = controller(async(req,res)=>{
+exports.handdler = async(req,res)=>{
     const contextObject = {
         payload: req.body,
         transactionId: UUID.v4()
     }
-
-    const resp = await Certificate.findAll()
-    res.status(status.OK).json(resp) 
-})
+        await saveCertificate(contextObject.payload).then( resCert =>{
+            const {status, controller, ...restData} = resCert
+            res.status(status).json(restData)
+        })
+}

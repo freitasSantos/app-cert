@@ -22,9 +22,9 @@ const configExpress = () => {
 
   app.use(routerCertificate)
 
-  app.use((_, res) => {
+  /*app.use((_, res) => {
     res._rt_send_error(status.NOT_FOUND, 'NOT_FOUND')
-})
+})*/
   return app;
 };
 
